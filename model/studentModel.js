@@ -46,7 +46,15 @@ const { Schema, default: mongoose } = require("mongoose");
     type:String,
     default:"all"
   }
- })
+ },{ timestamps: true })
+//  studentSchema.pre('save',function(next){
+//   console.log('hello i am pre middlware',this)
+  
+//   next()
+//  })
+//  studentSchema.post('save',function(){
+//   console.log('experiment done')
+//  })
  //here we have to create model
  let student= mongoose.model('emp',studentSchema)
  module.exports={student}
