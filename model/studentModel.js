@@ -29,7 +29,7 @@ const { Schema, default: mongoose } = require("mongoose");
       validator: function(v) {
         const pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
         console.log(this.name)
-           if(!(pattern.test(v) && (! v.includes(this.name))))
+           if(!(pattern.test(v) && (!v.includes(this.name))))
             {
                  throw new Error("password must have one symbol and not included username")
             }
@@ -45,7 +45,7 @@ const { Schema, default: mongoose } = require("mongoose");
   course:{
     type:String,
     default:"all"
-  }
+  },
  },{ timestamps: true })
 //  studentSchema.pre('save',function(next){
 //   console.log('hello i am pre middlware',this)

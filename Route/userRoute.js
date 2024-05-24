@@ -1,6 +1,6 @@
 let express=require('express')
 let route=express.Router()
-const { allEmpController, userByIdController, userUpdateController, delteUserController, newUserRegisController } = require("../controller/userController");
+const { allEmpController, userByIdController, userUpdateController, delteUserController, newUserRegisController, userLoginController } = require("../controller/userController");
 //this is for find all
 route.get("/",allEmpController);
 //this is for finding data by id using parms
@@ -11,4 +11,6 @@ route.patch("/:id",userUpdateController);
 route.delete("/:id",delteUserController );
 //this route is related to registration
 route.post("/register",newUserRegisController);
+//login || POST
+route.post('/login',userLoginController)
 module.exports={user_route:route}
